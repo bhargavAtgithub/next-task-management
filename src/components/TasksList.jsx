@@ -13,7 +13,7 @@ const TasksList = () => {
             p-2
         `}>
             {
-                allTasks.length ? allTasks.map((task, index) => {
+                allTasks && allTasks.length ? allTasks.map((task, index) => {
                     return (
                         <Task
                             key={index}

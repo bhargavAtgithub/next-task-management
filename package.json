@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "proxy": "http://localhost:3002",
   "dependencies": {
     "autoprefixer": "10.4.15",
     "dayjs": "^1.11.9",

@@ -8,23 +8,26 @@ const useFetch = () => {
         try {
             let options = {};
             if(method === 'GET'){
-                options = {
-                    'credentials': 'include'
-                }
+                const res = await fetch(BACKEND_URL + endpoint, {
+                    method: 'GET',
+                    credentials: 'include'
+                })
+                return res.json();
             } else {
                 options = {
                     method: method,
-                    mode: "cors",
                     headers: {
                         "Content-Type": "application/json",
                     },
                     credentials: 'include',
                     body: JSON.stringify(body)
                 }
+
+                const res = await fetch(BACKEND_URL + endpoint, options);
+                return res.json();
             }
     
-            const res = await fetch(BACKEND_URL + endpoint, options)
-            return res.json();
+            
         } catch (error) {
             console.log(error)
             router.push('/auth/sign-in');

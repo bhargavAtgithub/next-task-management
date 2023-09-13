@@ -15,9 +15,7 @@ export const TasksProvider = ({ children }) => {
     const getAllTasks = async () => {
         try {
             
-            const res = await apiFetch.apiFetch("/task/get-all", 'GET', {
-                'credentials': 'include'
-            });
+            const res = await apiFetch.apiFetch("/task/get-all", 'GET', {});
 
             const allTasks = res;
             setAllTasks(allTasks.tasks);

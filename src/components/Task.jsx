@@ -1,8 +1,7 @@
-"use client";
-
 import React from 'react';
 import IconButton from './IconButton';
 import { FiEdit2, FiDelete } from "react-icons/fi";
+import dayjs from 'dayjs';
 
 const Task = ({task, toggleComplete, onEdit, onDelete}) => {
     return (
@@ -45,8 +44,8 @@ const Task = ({task, toggleComplete, onEdit, onDelete}) => {
                 {
                     task.dueDate 
                         ? 
-                        <span>
-                            {task.dueDate}
+                        <span className='text-sm'>
+                            Due date: {dayjs(task.dueDate).format('DD/MM/YYYY')}
                         </span>
                         : null
                 }

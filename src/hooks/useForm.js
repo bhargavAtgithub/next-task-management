@@ -21,14 +21,12 @@ const useForm = (callback, validator) => {
     
     const handleSubmit = (e) => {
         if(e) e.preventDefault();
-        console.log(values);
         setErrors(validator(values));
         setIsSubmitting(true); 
     }
 
     const handleChange = (e) => {
         e.persist();
-        console.log(e.target.value)
         setValues(values => ({...values, [e.target.name]: e.target.value}));
     }
 
