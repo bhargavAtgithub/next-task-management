@@ -1,0 +1,1 @@
+export const BACKEND_URL = "13.233.124.8:3000";
