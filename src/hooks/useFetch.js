@@ -20,7 +20,6 @@ const useFetch = () => {
                     mode: 'cors',
                     headers: {
                         "Content-Type": "application/json",
-                        'Content': 'upgrade-insecure-requests',
                     },
                     credentials: 'include',
                     body: JSON.stringify(body)
