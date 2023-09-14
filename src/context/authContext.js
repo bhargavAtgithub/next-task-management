@@ -16,7 +16,7 @@ export const AuthProvider = ({children}) => {
                 ...creds
             })
 
-            const res = await loginCheck;
+            const res = loginCheck;
             console.log(res);
             if(res.user){
                 router.push('/tasks');

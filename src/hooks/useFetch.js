@@ -11,21 +11,23 @@ const useFetch = () => {
                 const res = await fetch(BACKEND_URL + endpoint, {
                     method: 'GET',
                     credentials: 'include',
+                    mode: 'cors',
                 })
                 return res.json();
             } else {
                 options = {
                     method: method,
+                    mode: 'cors',
                     headers: {
                         "Content-Type": "application/json",
-                        "Accept": '*',
                     },
                     credentials: 'include',
                     body: JSON.stringify(body)
                 }
 
                 const res = await fetch(BACKEND_URL + endpoint, options);
-                return res.json();
+                let jsonRes = await res.json();
+                return jsonRes;
             }
     
             
