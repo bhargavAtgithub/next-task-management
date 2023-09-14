@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 
-const useForm = (callback, validator) => {
-    const [values, setValues] = useState({});
+const useForm = (callback, validator, defaultValues = {}) => {
+    const [values, setValues] = useState(defaultValues);
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -10,11 +10,7 @@ const useForm = (callback, validator) => {
         if(Object.keys(errors).length === 0 && isSubmitting) {
             callback(values);
             setIsSubmitting(false);
-            setValues({
-                title: '',
-                description: '',
-                dueDate: ''
-            })
+            setValues(defaultValues)
             setErrors({});
         }  
     }, [errors]);

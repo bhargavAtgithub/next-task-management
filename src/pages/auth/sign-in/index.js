@@ -18,7 +18,11 @@ const Login = () => {
         errors,
         handleChange,
         handleSubmit,
-    } = useForm(inOrUp, authValidator);
+    } = useForm(inOrUp, authValidator, {
+        name: '',
+        email: '',
+        password: ''
+    });
 
     return (
         <form onSubmit={handleSubmit}x>

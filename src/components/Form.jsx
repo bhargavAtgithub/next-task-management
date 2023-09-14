@@ -33,7 +33,11 @@ const Form = () => {
         handleDateChange,
         handleSubmit,
         setNewValues
-    } = useForm(createOrUpdate, taskValidator);
+    } = useForm(createOrUpdate, taskValidator, {
+        title: '',
+        description: '',
+        dueDate: ''
+    });
 
       
       useEffect(() => {
